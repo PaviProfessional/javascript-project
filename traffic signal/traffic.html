@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traffic signal</title>
+    <link rel="stylesheet" href="traffic.css">
+</head>
+<body>
+<div class="quote">
+<br>
+<h2>Drive to survive, donot drink and drive</h2>
+<hr>
+</div>
+
+    <div class="container">
+        <div class="box1" id="g">
+        </div>
+        <div class="box2" id="y">
+        </div>
+        <div class="box3" id="r">
+        </div>
+    </div>
+    <div class="btn">
+    <button onclick="go()" id="go1">GO</button>
+    <button onclick="slow()" id="slow1">SLOW</button>
+    <button onclick="stop()" id="stop1">STOP</button>
+    </div>
+<div class="image">
+<img src="traffic-police.jpg" height="230">
+</div>
+<script>
+    function go()
+    {
+        document.getElementById('g').style.backgroundColor="green";
+        document.getElementById('y').style.backgroundColor="black";
+        document.getElementById('r').style.backgroundColor="black";
+    }
+    function slow()
+    {
+        document.getElementById('y').style.backgroundColor="yellow";
+        document.getElementById('g').style.backgroundColor="black";
+        document.getElementById('r').style.backgroundColor="black";
+    }
+    function stop()
+    {
+        document.getElementById('r').style.backgroundColor="red";
+        document.getElementById('g').style.backgroundColor="black";
+        document.getElementById('y').style.backgroundColor="black";
+    }
+
+
+
+</script>    
+
+    
+</body>
+</html>

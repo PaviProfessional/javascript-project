@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="" class="logo">Amozon</a>
+        </div>
+        <ul class="s-menu" id="s-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Servies</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    <div class="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+    </nav>
+
+    
+</body>
+<script>
+    let menu=document.querySelector(".menu");
+    let show=document.getElementById("s-menu");
+    menu.addEventListener('click',()=>{
+        show.classList.toggle('showmenu')
+    })
+    
+    
+        
+</script>
+</html>

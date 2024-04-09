@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch</title>
+</head>
+<body>
+    <div class="container">
+    <h1>STOP WATCH</h1>
+    <h1>PAVITHRA JAVASCRIPT STOPWATCH</h1>
+    <p id="seconds"></p>
+    <div id="display">
+        00:00:00
+    </div>
+    <button id="b-start" onclick="watchstart()">start</button>
+    <button id="b-stop" onclick="watchstop()">stop</button>
+    <button id="b-reset" onclick="watchreset()">reset</button>
+    </div>
+    <style>
+        .container
+        {
+            color:aqua;
+            text-align:center;
+            background-color: darksalmon;
+            height: 300px;
+            width:800px;
+        }
+        button
+        {
+            padding:20px 20px;
+            width:100px;
+            margin:10px;
+            font-size: 20px;
+            color:white;
+            background-color: black;
+        }
+        #display
+        {
+            height:25px;
+            width:100px;
+            margin-left: 330px;
+            border:1px;
+            border-radius:10%;
+            padding:20px 20px;
+            background-color: black;
+            color:white;
+            text-align: center;
+            
+        }
+    </style>
+    <script>
+        let [seconds, minutes, hours]=[0,0,0];
+        let displaytime=document.getElementById("display");
+        let timer=null;
+        function stopwatch(){
+            seconds++;
+            if (seconds==60){
+                secondes=0;
+                minutes++;
+                if (minutes==60){
+                    minutes=0;
+                    hours++;
+                }
+            }
+            let h=hours<10 ?"0"+hours:hours;
+            let m=minutes<10 ?"0"+minutes:minutes;
+            let s=seconds<10 ?"0"+seconds:seconds;
+            displaytime.innerHTML=h+":"+m+":"+s;
+        }
+        function watchstart(){
+            if(timer!=null)
+            {
+                clearInterval(timer);
+            }
+            timer=setInterval(stopwatch,1000);
+        }
+        function watchstop(){
+            clearInterval(timer);
+        }
+        function watchreset(){
+             clearInterval(timer);
+            [seconds,minutes,hours]=[0,0,0];
+            displaytime.innerHTML="00:00:00";
+        }
+
+    </script>
+
+    
+</body>
+</html>
